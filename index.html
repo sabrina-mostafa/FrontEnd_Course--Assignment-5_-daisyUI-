@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-School_DaisyUI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .poppins-regular {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .poppins-medium {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        .poppins-semibold {
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .poppins-bold {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .poppins-extrabold {
+            font-family: "Poppins", sans-serif;
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        .rubik-bold {
+            font-family: "Rubik", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .roboto-regular {
+            font-family: "Roboto", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <header>
+        <nav>
+            <div class="navbar bg-[#8cd38c] shadow-[0px_2px_15px_black] flex justify-around lg:justify-center w-[100%] fixed z-[100]">
+                <div class="navbar-start lg:w-[25%] w-[60%] pt-[0.4%]">
+        
+                    <div class="dropdown relative pr-[2.6%] pl-[2%]">
+                        <!-- Toggle dropdown button -->
+                        <label tabindex="0" role="button" class="btn hover:bg-transparent hover:border-transparent lg:hidden btn-circle swap swap-rotate bg-transparent border-transparent">
+                            <input type="checkbox" id="menuToggle" class="hidden" />
+                            
+                            <!-- hamburger icon (visible when checkbox is unchecked) -->
+                            <svg class="swap-off fill-black md:h-[2.5rem] h-[2rem] md:w-[2.5rem] w-[2rem]"
+                                xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512">
+                                <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
+                            </svg>
+                            
+                            <!-- close icon (visible when checkbox is checked) -->
+                            <svg class="swap-on fill-black md:h-[2.5rem] h-[2rem] md:w-[2.5rem] w-[2rem]"
+                                xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512">
+                                <polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
+                            </svg>
+                        </label>
+        
+                        <!-- Dropdown menu, visible when checkbox is checked -->
+                        <ul id="menuList"
+                            class="absolute left-0 mt-2 menu menu-sm dropdown-content bg-base-100 h-auto tracking-[0.07rem] flex-col text-[white] poppins-regular rounded-[10px] z-[10] w-52 p-5 shadow-[0_25px_500px_-1px_#413960] hidden">
+                            <li class="hover:text-[#8cd38c] hover:underline"><a class="text-[19px] leading-[3.8rem]">Books</a></li>
+                            <li class="hover:text-[#8cd38c] hover:underline"><a class="text-[19px] leading-[3.8rem]">Courses</a></li>
+                            <li class="hover:text-[#8cd38c] hover:underline"><a class="text-[19px] leading-[3.8rem]">Others</a></li>
+                            <li class="hover:text-[#8cd38c] hover:underline"><a class="text-[19px] leading-[3.8rem]">Blog</a></li>
+                        </ul>
+                    </div>
+        
+                    <img src="ICON/Logo.png" alt=""
+                        class="lg:w-[13rem] md:w-[11rem] w-[8rem] lg:h-[3.6rem] md:h-[2.7rem] h-[2rem] sm:flex hidden">
+                </div>
+        
+                <div class="navbar-end hidden lg:flex w-[45%]">
+                    <ul class="menu menu-horizontal px-1 poppins-medium text-[#000] text-[18px] flex gap-[2rem]">
+                        <li class="hover:font-[800] hover:text-[19px]"><a>Books</a></li>
+                        <li class="hover:font-[800] hover:text-[19px]"><a>Courses</a></li>
+                        <li class="hover:font-[800] hover:text-[19px]"><a>Others</a></li>
+                        <li class="hover:font-[800] hover:text-[19px]"><a>Blog</a></li>
+                    </ul>
+                </div>
+        
+                <div class="navbar-end lg:w-[15%] w-[38%] lg:pr-[0%] pr-[4%]">
+                    <a class="btn poppins-medium md:text-[18px] text-[14px] bg-[#21B573] hover:bg-[#71e0ae] hover:border-transparent text-[white] hover:text-[black] hover:font-[800] border-transparent rounded-[25px] md:w-[8rem] w-[6rem] md:min-h-[3rem] min-h-[2.5rem] md:h-[3rem] h-[2.5rem]">Sign in</a>
+                </div>
+            </div>
+        </nav>
+        <script>
+            // JavaScript to toggle visibility of dropdown on checkbox state
+            const menuToggle = document.getElementById("menuToggle");
+            const menuList = document.getElementById("menuList");
+        
+            menuToggle.addEventListener("change", () => {
+                if (menuToggle.checked) {
+                    menuList.classList.remove("hidden");
+                } else {
+                    menuList.classList.add("hidden");
+                }
+            });
+        </script>      
+        
+        
+
+        <section class="hero bg-[#F0FFF0] w-[100%] sm:pt-[9%] pt-[22%]">
+            <div class="hero bg-transparent w-[90%] py-[3.5%]">
+                <div class="hero-content flex-col lg:flex-row-reverse justify-between lg:gap-0 gap-[3rem] max-w-[90%]">
+                    <img src="Photos/Illustration.png" class="rounded-lg lg:w-[50%] w-[80%]" />
+                    <div class="lg:w-[45%] w-[90%]">
+                        <p class="sm:text-[22px] text-[17px] text-[#FD511A]  pb-[2%]">Are you ready to Learn?</p>
+                        <h1 class="md:text-[60px] sm:text-[48px] text-[36px] poppins-extrabold text-[black]">Learn With
+                            fun <br> on <span class="text-[#21B573]">any schedule</span> </h1>
+                        <p class="py-6 text-[#6C6B6B] sm:text-[22px] text-[17px] w-[80%] pt-[5%] leading-[2.5rem]">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius blandit facilisis quam
+                            netus.
+                        </p>
+                        <button
+                            class="btn btn-primary hover:text-[black] hover:font-[700] bg-[#21B573] hover:bg-[#379e70] hover:border-transparent text-[white] sm:text-[20px] text-[16px] rounded-[40px] sm:px-[2.5rem] px-[1.2rem] border-transparent sm:h-[3.5rem] h-[2.5rem]">Get
+                            Started</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </header>
+
+
+
+    <main>
+        <section
+            class="second sm:pt-[3%] pt-[10%] sm:pb-[3%] pb-[25%] bg-[white] w-[100%] h-auto flex justify-center items-center">
+            <div
+                class="grid xl:w-[80%] sm:w-[76%] w-[60%] xl:pb-0 pb-[3.8%] xl:grid-cols-4 sm:grid-cols-2 xl:pt-0 sm:pt-[5%] pt-[1%]  grid-cols-1 xl:gap-[2.3%] sm:gap-[5%] gap-[3%]">
+                <div
+                    class="gr xl:py-[18%] sm:py-[14%] py-[10%] flex flex-col justify-center items-center bg-[#F8FFFB] hover:bg-[white] hover:shadow-2xl rounded-[15px]">
+                    <img src="ICON/book.png" alt="" class="lg:w-[5.5rem] sm:w-[4rem] w-[3rem]">
+                    <div class="cntnt py-[5%] text-center w-[90%]">
+                        <h2 class="sm:text-[32px] text-[29px] poppins-semibold text-[#413960]">1500+ Topic</h2>
+                        <p class="sm:text-[22px] text-[18px] text-[#585859]">Learn Anything</p>
+                    </div>
+                </div>
+                <div
+                    class="gr xl:py-[18%] sm:py-[14%] py-[10%] flex flex-col justify-center items-center bg-[#F8FFFB] rounded-[15px] hover:bg-[white] hover:shadow-2xl">
+                    <img src="ICON/Student.png" alt="" class="lg:w-[6.7rem] sm:w-[4.7rem] w-[3.7rem]">
+                    <div class="cntnt py-[5%] text-center w-[90%]">
+                        <h2 class="sm:text-[32px] text-[29px] poppins-semibold text-[#413960]">1800+ Students</h2>
+                        <p class="sm:text-[22px] text-[18px] text-[#585859]">Learn Anything</p>
+                    </div>
+                </div>
+                <div
+                    class="gr xl:py-[18%] sm:py-[14%] py-[10%] flex flex-col justify-center items-center bg-[#F8FFFB] rounded-[15px] hover:bg-[white] hover:shadow-2xl">
+                    <img src="ICON/Test.png" alt="" class="lg:w-[6.6rem] sm:w-[5rem] w-[4rem]">
+                    <div class="cntnt py-[5%] text-center w-[90%]">
+                        <h2 class="sm:text-[32px] text-[29px] poppins-semibold text-[#413960]">9K+ Test Token</h2>
+                        <p class="sm:text-[22px] text-[18px] text-[#585859]">Learn Anything</p>
+                    </div>
+                </div>
+                <div
+                    class="gr xl:py-[18%] sm:py-[14%] py-[10%] flex flex-col justify-center items-center bg-[#F8FFFB] rounded-[15px] hover:bg-[white] hover:shadow-2xl">
+                    <img src="ICON/Students.png" alt="" class="lg:w-[6.3rem] sm:w-[5rem] w-[3.9rem]">
+                    <div class="cntnt py-[5%] text-center w-[90%]">
+                        <h2 class="sm:text-[32px] text-[29px] poppins-semibold text-[#413960]">2000+ Student</h2>
+                        <p class="sm:text-[22px] text-[18px] text-[#585859]">Learn Anything</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="third w-[100%] bg-[white] flex justify-center items-center">
+            <div class="con lg:py-[5%] sm:py-[8%] py-[8%] lg:w-[80%] md:w-[50%] sm:w-[65%] w-[76%]">
+                <h1 class="text-[#413960] poppins-extrabold sm:text-[46px] text-[37px] text-center">Online Courses</h1>
+                <div class="grid w-[100%] sm:py-[6%] py-[18%] lg:grid-cols-3 grid-cols-1 gap-[2.5%]">
+
+                    <div class="card card-compact shadow-2xl py-[7.5%] flex flex-col justify-center items-center">
+                        <figure class="w-[90%]">
+                            <img src="Photos/Morder pyschology.png" alt="Shoes" class="w-[100%]" />
+                        </figure>
+                        <div class="card-body w-[100%] flex justify-center items-center">
+                            <h2
+                                class="card-title text-[#413960] font-[600] sm:text-[30px] text-[26px] sm:pt-[3%] w-[100%]">
+                                Modern Psychology</h2>
+                            <p class="text-[#585859] sm:text-[21px] text-[16px] w-[100%]">Designation</p>
+                            <div class="card-actions justify-start sm:pt-[4%] pt-[2%] w-[100%]">
+                                <button
+                                    class="btn btn-primary sm:w-[9.5rem] w-[7.5rem] bg-[#21B573] hover:bg-[#258a5b] border-transparent hover:border-transparent text-[white] font-[400] sm:text-[19px] text-[15px] rounded-[30px]">Buy
+                                    Course</button>
+                            </div>
+                            <div
+                                class="flex xl:flex-row lg:flex-col mb-[-16px] w-[100%] sm:pt-[8%] pt-[6%] gap-[3%] justify-between">
+                                <div class="flex gap-[7px] items-center">
+                                    <img src="ICON/calendar.png" alt="" class="sm:w-[1.8rem] w-[1.2rem]">
+                                    <p class="text-[#585859] sm:text-[18px] text-[13px] font-[600]">Start 20 April, 2021
+                                    </p>
+                                </div>
+                                <div class="flex gap-[7px] items-center justify-end">
+                                    <img src="ICON/people.png" alt="" class="sm:w-[1.8rem] w-[1.2rem]">
+                                    <p class="text-[#585859] sm:text-[18px] text-[13px] font-[600]">60 seats</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-compact shadow-2xl py-[7.5%] flex flex-col justify-center items-center">
+                        <figure class="w-[90%]">
+                            <img src="Photos/Morder psyc.png" alt="Shoes" class="w-[100%]" />
+                        </figure>
+                        <div class="card-body w-[100%] flex justify-center items-center">
+                            <h2
+                                class="card-title text-[#413960] font-[600] sm:text-[30px] text-[26px] sm:pt-[3%] w-[100%]">
+                                Modern Psychology</h2>
+                            <p class="text-[#585859] sm:text-[21px] text-[16px] w-[100%]">Designation</p>
+                            <div class="card-actions justify-start sm:pt-[4%] pt-[2%] w-[100%]">
+                                <button
+                                    class="btn btn-primary sm:w-[9.5rem] w-[7.5rem] bg-[#21B573] hover:bg-[#258a5b] border-transparent hover:border-transparent text-[white] font-[400] sm:text-[19px] text-[15px] rounded-[30px]">Buy
+                                    Course</button>
+                            </div>
+                            <div
+                                class="flex xl:flex-row lg:flex-col mb-[-16px] w-[100%] sm:pt-[8%] pt-[6%] gap-[3%] justify-between">
+                                <div class="flex gap-[7px] items-center">
+                                    <img src="ICON/calendar.png" alt="" class="sm:w-[1.8rem] w-[1.2rem]">
+                                    <p class="text-[#585859] sm:text-[18px] text-[13px] font-[600]">Start 20 April, 2021
+                                    </p>
+                                </div>
+                                <div class="flex gap-[7px] items-center justify-end">
+                                    <img src="ICON/people.png" alt="" class="sm:w-[1.8rem] w-[1.2rem]">
+                                    <p class="text-[#585859] sm:text-[18px] text-[13px] font-[600]">60 seats</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-compact shadow-2xl py-[7.5%] flex flex-col justify-center items-center">
+                        <figure class="w-[90%]">
+                            <img src="Photos/Morder pychons.png" alt="Shoes" class="w-[100%]" />
+                        </figure>
+                        <div class="card-body w-[100%] flex justify-center items-center">
+                            <h2
+                                class="card-title text-[#413960] font-[600] sm:text-[30px] text-[26px] sm:pt-[3%] w-[100%]">
+                                Modern Psychology</h2>
+                            <p class="text-[#585859] sm:text-[21px] text-[16px] w-[100%]">Designation</p>
+                            <div class="card-actions justify-start sm:pt-[4%] pt-[2%] w-[100%]">
+                                <button
+                                    class="btn btn-primary sm:w-[9.5rem] w-[7.5rem] bg-[#21B573] hover:bg-[#258a5b] border-transparent hover:border-transparent text-[white] font-[400] sm:text-[19px] text-[15px] rounded-[30px]">Buy
+                                    Course</button>
+                            </div>
+                            <div
+                                class="flex xl:flex-row lg:flex-col mb-[-16px] w-[100%] sm:pt-[8%] pt-[6%] gap-[3%] justify-between">
+                                <div class="flex gap-[7px] items-center">
+                                    <img src="ICON/calendar.png" alt="" class="sm:w-[1.8rem] w-[1.2rem]">
+                                    <p class="text-[#585859] sm:text-[18px] text-[13px] font-[600]">Start 20 April, 2021
+                                    </p>
+                                </div>
+                                <div class="flex gap-[7px] items-center justify-end">
+                                    <img src="ICON/people.png" alt="" class="sm:w-[1.8rem] w-[1.2rem]">
+                                    <p class="text-[#585859] sm:text-[18px] text-[13px] font-[600]">60 seats</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="fourth bg-[white] w-[100%] flex justify-center items-center pb-[5%]">
+            <div class="contnr lg:w-[70%] w-[96%]">
+                <h1 class="sm:text-[49px] text-[42px] font-[800] text-center text-[black] pb-[4.5%] lg:pt-0 pt-[12%]">
+                    Testimonial</h1>
+                <div class="hero">
+                    <div class="hero-content flex-col lg:flex-row xl:w-[80%] lg:w-[100%] w-[82%] gap-[7%]">
+                        <img src="Photos/Man.png"
+                            class="max-w-sm rounded-lg sm:w-[9.5rem] w-[8.5rem] lg:pb-0 pb-[4%] lg:pt-0 pt-[5%]" />
+                        <div class="">
+                            <p
+                                class="text-[black] sm:text-[22px] text-[18px] font-[400] sm:leading-[2.8rem] leading-[2.2rem] lg:text-left text-center">
+                                There are many variations of passages of Lorem Ipsum available, but the
+
+                                majority have suffered alteration in some form, by injected humour,
+
+                                or randomised words which don't look even slightly believable.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+
+
+    <footer class="w-[100%] flex justify-end items-center bg-[#282531]">
+        <footer class="footer p-16 w-[93%] text-[white]">
+            <aside>
+                <p class="sm:text-[22px] text-[19px] leading-[2.5rem]">
+                    Millions of people of all ages and from around
+                    <br />
+                    the world are improving their lives with us
+                </p>
+            </aside>
+            <nav class="sm:text-[20px] text-[17px] leading-[2rem]">
+                <h6 class="sm:text-[27px] text-[25px] font-[700] leading-[3.2rem]">Course</h6>
+                <a class="link link-hover">Graphic Design</a>
+                <a class="link link-hover">Web Design</a>
+                <a class="link link-hover">Business</a>
+                <a class="link link-hover">Marketing</a>
+                <a class="link link-hover">Engineering</a>
+            </nav>
+            <nav class="sm:text-[20px] text-[17px] leading-[2rem]">
+                <h6 class="sm:text-[27px] text-[25px] font-[700] leading-[3.2rem]">Terms</h6>
+                <a class="link link-hover">Graphic Design</a>
+                <a class="link link-hover">Web Design</a>
+                <a class="link link-hover">Business</a>
+                <a class="link link-hover">Marketing</a>
+                <a class="link link-hover">Engineering</a>
+            </nav>
+            <nav class="sm:text-[20px] text-[17px] leading-[2rem]">
+                <h6 class="sm:text-[27px] text-[25px] font-[700] leading-[3.2rem]">Useful Link</h6>
+                <a class="link link-hover">Graphic Design</a>
+                <a class="link link-hover">Web Design</a>
+                <a class="link link-hover">Business</a>
+                <a class="link link-hover">Marketing</a>
+                <a class="link link-hover">Engineering</a>
+            </nav>
+        </footer>
+    </footer>
+    <footer class="footer footer-center p-9 bg-[#282531]">
+        <aside>
+            <p class="sm:text-[22px] text-[18px] text-[#CDCDCD] leading-[2.2rem]">Copyright © 2020 - All right reserved
+                by ACME Industries Ltd</p>
+        </aside>
+    </footer>
+
+</body>
+
+</html>
